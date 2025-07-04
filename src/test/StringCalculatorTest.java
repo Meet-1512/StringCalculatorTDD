@@ -53,5 +53,14 @@ public class StringCalculatorTest {
 		);
 		assertEquals("Negative numbers are not allowed: -7",ex.getMessage());
 	}
+	
+	@Test
+	void multipleNegativeNumberException() {
+		IllegalArgumentException ex = assertThrows(
+				IllegalArgumentException.class,
+				()->calculator.add("-4,-7,2")
+		);
+		assertEquals("Negative numbers are not allowed: -4, -7",ex.getMessage());
+	}
 }
 
