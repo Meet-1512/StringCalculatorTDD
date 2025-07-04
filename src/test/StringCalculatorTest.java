@@ -19,4 +19,16 @@ public class StringCalculatorTest {
 		assertEquals(123,calculator.add("123"));
 		assertEquals(12345,calculator.add("12345"));
 	}
+	
+	@Test
+	void twoNumbersAreSummed() {
+		assertEquals(6,calculator.add("1,5"));
+		assertEquals(100,calculator.add("40,60"));
+	}
+	
+	@Test
+	void multipleNumbersAreSummed() {
+		assertEquals(15,calculator.add("1,2,3,4,5"));
+		assertEquals(100,calculator.add("10,20,30,40"));
+	}
 }
